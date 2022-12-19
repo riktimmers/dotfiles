@@ -179,10 +179,13 @@ bar {
 #exec xrandr --output DP-3 --auto --pos 0x0 --output DP-5 --auto --pos 1920x0 --output HDMI-0 --auto --pos 3840x0
 
 exec --no-startup-id i3-msg 'exec firefox'
-exec --no-startup-id i3-msg 'workspace 2; exec terminator'
+exec --no-startup-id i3-msg 'workspace 6; exec qbittorrent'
+exec --no-startup-id i3-msg 'workspace 2; exec terminator -e tmux'
+
 bindsym Control+Mod1+l exec "i3lock -e --color 000000"
 
 assign [class="firefox"] 1
+assign [class="qBittorrent"] 6
 
 ## Set Keyboard layout, key switch stays at the same position 
 bindsym Mod4+t exec setxkbmap -layout us -variant altgr-intl 
@@ -196,13 +199,9 @@ bindsym Mod4+k exec setxkbmap -layout us -variant real-prog-dvorak
 bindsym Mod4+F9 exec ~/.config/i3/toggle_sink.sh
 
 # Volume controls for both 
-bindsym Mod4+minus exec --no-startup-id pactl set-sink-volume 0 -5%; exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% #decrease sound volume
-bindsym Mod4+plus exec  --no-startup-id pactl set-sink-volume 0 +5%; exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume 
+#bindsym Mod4+exclam exec --no-startup-id pactl set-sink-volume 0 -5%; exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% #decrease sound volume
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym Mod4+0x21 exec --no-startup-id pactl set-sink-volume 0 -5%; exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% #decrease sound volume
+bindsym Mod4+0x7c exec  --no-startup-id pactl set-sink-volume 0 +5%; exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume 
 
-# # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec brightnessctl s +10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec brightnessctl s 10- # decrease screen brightness
+bindsym Print exec gnome-screenshot -i 
