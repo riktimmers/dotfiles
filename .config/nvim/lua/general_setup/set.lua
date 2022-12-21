@@ -1,3 +1,4 @@
+vim.opt.number = true
 vim.opt.relativenumber = true
 
 vim.opt.tabstop = 4
@@ -47,3 +48,4 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>")
+

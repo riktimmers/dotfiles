@@ -24,6 +24,11 @@ return require('packer').startup(function(use)
 
 	use { 'tpope/vim-fugitive' }
 
+    -- Use release branch (recommend)
+    use {'neoclide/coc.nvim', branch = 'release'}
+
+    
+    --[[
 	use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  requires = {
@@ -44,6 +49,7 @@ return require('packer').startup(function(use)
 	    {'L3MON4D3/LuaSnip'},
 	    {'rafamadriz/friendly-snippets'},
 	  }}
+      ]]--
 
 end)
 
