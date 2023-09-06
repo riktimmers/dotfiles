@@ -25,7 +25,13 @@ return require('packer').startup(function(use)
 	use { 'tpope/vim-fugitive' }
 
     -- Use release branch (recommend)
-    use {'neoclide/coc.nvim', branch = 'release'}
+  use {'neoclide/coc.nvim', branch = 'release'}
+
+
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
 
     
     --[[

@@ -1,3 +1,7 @@
 {
-  "snippets.ultisnips.pythonPrompt": false
+  "snippets.ultisnips.pythonPrompt": false,
+  "clangd.arguments": [
+      "--completion-style=detailed",
+      "--header-insertion=never"
+  ]
 }
