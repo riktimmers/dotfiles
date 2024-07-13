@@ -1,0 +1,19 @@
+# ~/.tmuxinator/pico_spi_example.yml
+
+name: pico_spi_example
+root: ~/
+
+windows:
+  - editor: 
+    - cd ~/workspace/pico_spi_example/
+    - nvim -S 
+  - build:
+    - cd ~/workspace/pico_spi_example/build/
+  - gdb:
+    - cd ~/workspace/pico_spi_example/build/
+    - gdb-multiarch pico_spi_example.elf
+  - openocd: 
+    - cd ~/workspace/pico_spi_example/build/
+    - openocd -f interface/picoprobe.cfg -f target/rp2040.cfg
+  - git:
+    - cd ~/workspace/pico_spi_example/

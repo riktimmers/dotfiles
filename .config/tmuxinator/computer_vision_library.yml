@@ -1,0 +1,10 @@
+name: computer_vision_library
+root: ~/workspace/cpp/computer_vision_library
+
+windows:
+  - editor: 
+    - nvim .
+  - build:
+    - cd ./build/
+  - git:
+    - git status

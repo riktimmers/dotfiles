@@ -1,0 +1,10 @@
+# ~/.tmuxinator/workspace.yml
+
+name: germains_ui
+root: ~/workspace/Germains_UI/ui/
+
+windows:
+  - editor: 
+    - nvim .
+  - build:
+    - ls

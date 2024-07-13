@@ -1,0 +1,18 @@
+# ~/.tmuxinator/remote_spi_controller.yml
+
+name: remote_spi_controller
+root: ~/
+
+windows:
+  - editor: 
+    - sshfs -o default_permissions borg@nano:/ ~/workspace/nano/
+    - cd ~/workspace/nano/home/borg/workspace/spi_controller/ 
+    - nvim -S 
+  - build:
+    - ssh borg@nano
+    - cd ~/workspace/spi_controller/build/
+  - git:
+    - ssh borg@nano
+    - cd ~/workspace/spi_controller/build/
+    - git status
+    

@@ -1,0 +1,12 @@
+# ~/.tmuxinator/myleg.yml
+
+name: myleg
+root: ~/
+
+windows:
+  - editor: 
+    - cd ~/workspace/myleg/myleg/
+    - nvim -S 
+  - git:
+    - cd ~/workspace/myleg/myleg/
+    - git status

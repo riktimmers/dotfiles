@@ -1,3 +1,13 @@
 {
-  "snippets.ultisnips.pythonPrompt": false
+  "snippets.ultisnips.pythonPrompt": false,
+  "coc.preferences.formatOnSave": true,
+  "diagnostic.virtualText": true,
+  "diagnostic.virtualTextCurrentLineOnly": false,
+  "clangd.arguments": [
+    "--completion-style=detailed",
+    "--header-insertion=never",
+    "--all-scopes-completion",
+    "--background-index"
+  ],
+  "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/14.0.3/clangd_14.0.3/bin/clangd"
 }

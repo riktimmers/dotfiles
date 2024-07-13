@@ -1,0 +1,22 @@
+# ~/.tmuxinator/pico_w_myleg.yml
+
+name: pico_w_myleg
+root: ~/
+
+windows:
+  - editor: 
+    - cd ~/workspace/pico_w_myleg/
+    - nvim -S 
+  - build:
+    - cd ~/workspace/pico_w_myleg/build/
+  - gdb:
+    - cd ~/workspace/pico_w_myleg/build/
+    - gdb-multiarch pico_w_myleg.elf
+  - openocd: 
+    - cd ~/workspace/pico_w_myleg/build/
+    - openocd -f interface/picoprobe.cfg -f target/rp2040.cfg
+  - python:
+    - cd ~/workspace/myleg/pi_myleg/
+  - git:
+    - cd ~/workspace/pico_w_myleg/
+    - git status

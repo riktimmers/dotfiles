@@ -1,0 +1,14 @@
+# ~/.tmuxinator/usb_controller.yml
+
+name: usb_controller
+root: ~/
+
+windows:
+  - editor: 
+    - cd ~/workspace/usb_controller/
+    - nvim -S 
+  - build:
+    - cd ~/workspace/usb_controller/build/
+  - git:
+    - cd ~/workspace/usb_controller/
+    - git status

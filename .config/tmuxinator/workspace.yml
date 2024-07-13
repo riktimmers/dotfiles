@@ -1,0 +1,10 @@
+# ~/.tmuxinator/workspace.yml
+
+name: workspace
+root: ~/
+
+windows:
+  - editor: 
+    - cd ~/workspace/cpp/
+  - build:
+    - cd ~/workspace/cpp/

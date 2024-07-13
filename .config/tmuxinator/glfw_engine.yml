@@ -1,0 +1,10 @@
+name: glfw_engine
+root: ~/workspace/cpp/glfw_engine
+
+windows:
+  - editor: 
+    - nvim .
+  - build:
+    - cd ./build/
+  - git:
+    - git status

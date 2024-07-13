@@ -172,6 +172,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        font pango:DejaVu Sans Mono 10
 }
 
 ## Setup Monitors position
@@ -182,14 +183,21 @@ exec --no-startup-id i3-msg 'exec firefox'
 exec --no-startup-id i3-msg 'workspace 6; exec qbittorrent'
 exec --no-startup-id i3-msg 'workspace 2; exec terminator -e tmux'
 
+exec --no-startup-id i3-msg 'exec xset -dpms s off'
+
 bindsym Control+Mod1+l exec "i3lock -e --color 000000"
 
 assign [class="firefox"] 1
 assign [class="qBittorrent"] 6
 
+
 ## Set Keyboard layout, key switch stays at the same position 
 bindsym Mod4+t exec setxkbmap -layout us -variant altgr-intl 
 bindsym Mod4+k exec setxkbmap -layout us -variant real-prog-dvorak
+
+exec --no-startup-id i3-msg 'exec setxkbmap -layout us -variant real-prog-dvorak'
+exec --no-startup-id i3-msg 'xset r rate 400 10'
+
 
 # Set audio sinks 
 #exec --no-starup-id pactl move-sink-input 1 alsa_output.usb-Kingston_HyperX_Virtual_Surround_Sound_00000000-00.analog-stereo
@@ -205,3 +213,6 @@ bindsym Mod4+0x21 exec --no-startup-id pactl set-sink-volume 0 -5%; exec --no-st
 bindsym Mod4+0x7c exec  --no-startup-id pactl set-sink-volume 0 +5%; exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume 
 
 bindsym Print exec gnome-screenshot -i 
+
+# Testing with GLFW 
+for_window [title="GLFW_render"] floating enable

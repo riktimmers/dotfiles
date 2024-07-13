@@ -1,0 +1,10 @@
+# ~/.tmuxinator/workspace.yml
+
+name: germains
+root: ~/workspace/Germains/controller
+
+windows:
+  - editor: 
+    - nvim .
+  - build:
+    - cd ./build/

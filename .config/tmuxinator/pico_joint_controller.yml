@@ -1,0 +1,20 @@
+# ~/.tmuxinator/pico_joint_controller.yml
+
+name: pico_joint_controller
+root: ~/
+
+windows:
+  - editor: 
+    - cd ~/workspace/pico_joint_controller/
+    - nvim -S 
+  - build:
+    - cd ~/workspace/pico_joint_controller/build/
+  - gdb:
+    - cd ~/workspace/pico_joint_controller/build/
+    - gdb-multiarch pico_joint_controller.elf
+  - openocd: 
+    - cd ~/workspace/pico_joint_controller/build/
+    - openocd -f interface/picoprobe.cfg -f target/rp2040.cfg
+  - git:
+    - cd ~/workspace/pico_joint_controller/
+    - git status
