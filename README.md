@@ -1,4 +1,4 @@
 # dotfiles
 
-adding .gitmessage.txt \n
+adding .gitmessage.txt\
 git config --global commit.template path/to/.gitmessage.txt
