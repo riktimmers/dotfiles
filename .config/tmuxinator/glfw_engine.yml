@@ -1,0 +1,12 @@
+# /home/rik/.config/tmuxinator/robot_framework.yml
+
+name: glfw_engine
+root: ~/workspace/cpp/glfw_engine/
+
+windows:
+  - editor: 
+      - nvim .
+  - make: 
+      - cd ./build
+  - git:
+    - git status

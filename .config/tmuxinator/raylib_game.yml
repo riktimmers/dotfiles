@@ -1,0 +1,10 @@
+name: raylib_game
+root: ~/workspace/cpp/raylib_game/
+
+windows:
+  - editor: 
+      - nvim .
+  - make: 
+      - cd build
+  - git: 
+      - git status

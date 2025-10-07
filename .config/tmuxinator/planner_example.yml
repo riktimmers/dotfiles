@@ -1,0 +1,10 @@
+# /home/rik/.config/tmuxinator/planner_example.yml
+
+name: planner_example
+root: ~/workspace/cpp/planner_example/
+
+windows:
+  - editor: 
+      - nvim .
+  - make: 
+      - cd ./build

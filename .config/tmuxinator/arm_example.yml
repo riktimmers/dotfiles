@@ -1,0 +1,10 @@
+# /home/rik/.config/tmuxinator/arm_example.yml
+
+name: arm_example
+root: ~/workspace/cpp/arm_example/
+
+windows:
+  - editor: 
+      - nvim .
+  - make: 
+      - cd ./build

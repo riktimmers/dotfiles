@@ -1,0 +1,12 @@
+# /home/rik/.config/tmuxinator/udp_server.yml
+
+name: udp_server
+root: ~/workspace/cpp/libraries/udp_server/
+
+windows:
+  - editor: 
+      - nvim .
+  - make: 
+      - cd build
+  - git: 
+      - git status

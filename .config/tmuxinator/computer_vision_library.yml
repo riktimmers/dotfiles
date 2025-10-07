@@ -1,0 +1,12 @@
+# /home/rik/.config/tmuxinator/robot_framework.yml
+
+name: computer_vision_library
+root: ~/workspace/cpp/computer_vision_library/
+
+windows:
+  - editor: 
+      - nvim .
+  - make: 
+      - cd ./build
+  - git:
+    - git status

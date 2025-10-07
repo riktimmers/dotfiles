@@ -1,0 +1,13 @@
+# /home/rik/.config/tmuxinator/simple_arm_simulator.yml
+
+name: simple_arm_simulator
+root: ~/workspace/cpp/robot_arm_simulation/simple_arm_simulator/
+
+windows:
+  - editor: 
+      - cd src
+      - nvim .
+  - make: 
+      - cd build
+  - git: 
+      - git status

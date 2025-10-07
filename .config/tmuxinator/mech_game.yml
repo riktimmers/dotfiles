@@ -1,0 +1,10 @@
+name: mech_game
+root: ~/workspace/cpp/mech_game/
+
+windows:
+  - editor: 
+      - nvim .
+  - make: 
+      - cd ./build
+  - git:
+    - git status

@@ -1,0 +1,10 @@
+name: vulkan_engine
+root: ~/workspace/cpp/vulkan_engine/
+
+windows:
+  - editor: 
+      - nvim .
+  - make: 
+      - cd ./build
+  - git:
+    - git status

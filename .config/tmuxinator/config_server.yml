@@ -1,0 +1,13 @@
+# /home/rik/.config/tmuxinator/config_server.yml
+
+name: config_server
+root: ~/workspace/cpp/robot_arm_simulation/config_server/
+
+windows:
+  - editor: 
+      - cd src
+      - nvim .
+  - make: 
+      - cd build
+  - git: 
+      - git status

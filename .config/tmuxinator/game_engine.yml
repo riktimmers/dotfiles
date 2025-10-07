@@ -1,0 +1,12 @@
+
+name: game_engine
+root: ~/workspace/cpp/game_engine/
+
+windows:
+  - editor: 
+      - cd src
+      - nvim .
+  - make: 
+      - cd build
+  - git: 
+      - git status

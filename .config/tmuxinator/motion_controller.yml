@@ -1,0 +1,13 @@
+# /home/rik/.config/tmuxinator/motion_controller.yml
+
+name: motion_controller
+root: ~/workspace/cpp/robot_arm_simulation/motion_controller/
+
+windows:
+  - editor: 
+      - cd src
+      - nvim .
+  - make: 
+      - cd build
+  - git: 
+      - git status

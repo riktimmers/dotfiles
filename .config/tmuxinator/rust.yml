@@ -1,0 +1,10 @@
+# /home/rik/.config/tmuxinator/rust.yml
+
+name: rust
+root: ~/
+
+windows:
+  - editor:
+    - cd ~/workspace/rust/
+  - build: 
+    - cd ~/workspace/rust/

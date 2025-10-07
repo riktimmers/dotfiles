@@ -1,0 +1,11 @@
+# /home/rik/.config/tmuxinator/robot_framework.yml
+
+name: robot_framework
+root: ~/workspace/robot_framework/
+
+windows:
+  - editor: 
+      - cd src
+      - nvim .
+  - make: 
+      - cd ../build
