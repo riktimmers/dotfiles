@@ -14,9 +14,11 @@
 ## Work Setup
 #set $monitor_left DP-3
 #set $monitor_center DP-5
-#set $monitor_right HDMI-0
+set $monitor_main HDMI-1
+set $monitor_laptop eDP
 
-#workspace 1 output $monitor_left
+workspace 1 output $monitor_main
+workspace 2 output $monitor_laptop
 #workspace 2 output $monitor_center
 #workspace 3 output $monitor_right
 #workspace 4 output $monitor_left
@@ -184,9 +186,23 @@ bindsym Control+Mod1+l exec "i3lock -e --color 000000"
 
 assign [class="firefox"] 1
 
+for_window [class="^.*"] border pixel 0
+
+for_window [class=".*"] fullscreen enable
+
+for_window [class="MotionControlUI"] floating enable
+for_window [class="MotionControlUI"] fullscreen disable
+for_window [class="MotionControlUI"] move position 0 0
+
+for_window [class="raylib"] floating disable
+for_window [class="raylib"] fullscreen disable
+
+
 ## Set Keyboard layout, key switch stays at the same position 
 bindsym Mod4+t exec setxkbmap -layout us -variant altgr-intl 
 bindsym Mod4+k exec setxkbmap -layout us -variant real-prog-dvorak
+
+exec --no-startup-id i3-msg 'exec setxkbmap -layout us -variant real-prog-dvorak'
 
 # Set audio sinks 
 #exec --no-starup-id pactl move-sink-input 1 alsa_output.usb-Kingston_HyperX_Virtual_Surround_Sound_00000000-00.analog-stereo
@@ -196,13 +212,13 @@ bindsym Mod4+k exec setxkbmap -layout us -variant real-prog-dvorak
 bindsym Mod4+F9 exec ~/.config/i3/toggle_sink.sh
 
 # Volume controls for both 
-bindsym Mod4+minus exec --no-startup-id pactl set-sink-volume 0 -5%; exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% #decrease sound volume
-bindsym Mod4+plus exec  --no-startup-id pactl set-sink-volume 0 +5%; exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume 
+bindsym $mod+0x21 exec --no-startup-id pactl set-sink-volume 0 -5%; exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% #decrease sound volume
+bindsym $mod+0x7c exec  --no-startup-id pactl set-sink-volume 0 +5%; exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume 
 
 #bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 #bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
-# # Sreen brightness controls
+# Screen brightness controls
 bindsym XF86MonBrightnessUp exec brightnessctl s +10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec brightnessctl s 10- # decrease screen brightness
