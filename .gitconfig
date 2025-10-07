@@ -1,0 +1,6 @@
+[user]
+	email = riktimmers@hotmail.com
+[core]
+	editor = nvim
+[commit]
+	template = /home/rik/repositories/dotfiles/.gitmessage.txt
