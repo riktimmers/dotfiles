@@ -1,7 +1,15 @@
 {
   "snippets.ultisnips.pythonPrompt": false,
+  "coc.preferences.formatOnSave": true,
+  "diagnostic.virtualText": true,
+  "diagnostic.virtualTextCurrentLineOnly": false,
+  "inlayHint.enable": false,
   "clangd.arguments": [
-      "--completion-style=detailed",
-      "--header-insertion=never"
-  ]
+    "--completion-style=detailed",
+    "--header-insertion=never",
+    "--all-scopes-completion",
+    "--background-index"
+  ],
+  "python.formatting.provider": "yapf",
+  "python.jediEnabled": false
 }

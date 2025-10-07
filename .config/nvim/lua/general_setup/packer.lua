@@ -1,5 +1,3 @@
---- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
@@ -8,7 +6,7 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
 	use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
+	  'nvim-telescope/telescope.nvim', tag = '0.1.6',
 	-- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
 	}
@@ -26,14 +24,31 @@ return require('packer').startup(function(use)
 
     -- Use release branch (recommend)
   use {'neoclide/coc.nvim', branch = 'release'}
-
+  
+  use {'Exafunction/codeium.vim' }
 
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
 
-    
+  --use { 'mfussenegger/nvim-dap' }
+
+  --[[
+  use {
+    -- Add indentation guides even on blank lines
+    'lukas-reineke/indent-blankline.nvim',
+    -- Enable `lukas-reineke/indent-blankline.nvim`
+    -- See `:help indent_blankline.txt`
+    opts = {
+      char = ' ', 
+      show_trailing_blankline_indent = false,
+      char_highlight_list = {
+        "guifg=#EE0000 gui=nocombine",
+      },
+    },
+  }
+  --]]
     --[[
 	use {
 	  'VonHeikemen/lsp-zero.nvim',
@@ -56,6 +71,7 @@ return require('packer').startup(function(use)
 	    {'rafamadriz/friendly-snippets'},
 	  }}
       ]]--
+      
 
 end)
 
