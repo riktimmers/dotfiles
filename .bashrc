@@ -1,3 +1,4 @@
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -59,14 +60,14 @@ fi
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\W\$ '
 fi
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \W\a\]$PS1"
     ;;
 *)
     ;;
@@ -116,11 +117,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-#source /opt/ros/foxy/setup.bash
-#source $HOME/ros_workspaces/dev_ws/install/local_setup.sh
-#export ROS_DOMAIN_ID=0
-#export GRPC_LIB=$HOME/.local
-#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/.mujoco/mujoco210/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/workspace/cpp/assimp/bin/
 export PATH=$PATH:$HOME/programs/node/bin
 #/home/rik/programs/qtcreator-10.0.1/bin:$HOME/programs/flutter/bin
@@ -133,16 +129,16 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/
 powerline-daemon -q 
 POWERLINE_BASH_CONTINUATION=1 
 POWERLINE_BASH_SELECT=1 
-source $HOME/.local/lib/python3.8/site-packages/powerline/bindings/bash/powerline.sh 
+source /usr/share/powerline/bindings/bash/powerline.sh
 
 alias mux='tmuxinator' 
 
 xset -dpms
 xset s off
 
-#source /opt/ros/noetic/setup.bash
-#source $HOME/workspace/catkin_ws/devel/setup.bash
 
 alias make="make -j6"
 alias mk="make -j6"
 alias mi="make install"
+
+setxkbmap -layout us -variant real-prog-dvorak
