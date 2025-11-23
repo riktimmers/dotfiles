@@ -51,7 +51,8 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec $HOME/.local/kitty.app/bin/kitty -e tmux
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -181,7 +182,8 @@ bar {
 #exec xrandr --output DP-3 --auto --pos 0x0 --output DP-5 --auto --pos 1920x0 --output HDMI-0 --auto --pos 3840x0
 
 exec --no-startup-id i3-msg 'exec firefox'
-exec --no-startup-id i3-msg 'workspace 2; exec terminator -e tmux'
+exec --no-startup-id i3-msg 'workspace 2; exec $HOME/.local/kitty.app/bin/kitty -e tmux'
+
 bindsym Control+Mod1+l exec "i3lock -e --color 000000"
 
 assign [class="firefox"] 1
@@ -202,7 +204,11 @@ for_window [class="raylib"] fullscreen disable
 bindsym Mod4+t exec setxkbmap -layout us -variant altgr-intl 
 bindsym Mod4+k exec setxkbmap -layout us -variant real-prog-dvorak
 
+#exec  $HOME/.config/i3/set_keyboard.sh
+#exec_always --no-startup-id i3-msg $HOME/.config/i3/set_keyboard.sh
 exec --no-startup-id i3-msg 'exec setxkbmap -layout us -variant real-prog-dvorak'
+
+#exec_always --no-startup-id $HOME/.config/i3/set_keyboard.sh
 
 # Set audio sinks 
 #exec --no-starup-id pactl move-sink-input 1 alsa_output.usb-Kingston_HyperX_Virtual_Surround_Sound_00000000-00.analog-stereo

@@ -1,0 +1,11 @@
+name: computer_vision_viewer
+root: ~/workspace/cpp/projects/computer_vision_viewer/
+
+windows:
+  - editor: 
+      - cd src
+      - nvim .
+  - make: 
+      - cd build
+  - git: 
+      - git status

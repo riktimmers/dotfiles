@@ -25,7 +25,6 @@ vim.opt.signcolumn = "yes"
 vim.opt.updatetime = 50
 vim.opt.colorcolumn = '100' 
 
-vim.g.mapleader = ","
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -49,8 +48,23 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>")
 
-vim.api.nvim_create_autocmd('BufWritePre', {
-  callback = function()
-    vim.lsp.buf.format({ async = false })
-  end
-})
+vim.keymap.set("n", "<C-w>t", ":tab split<CR>")
+
+vim.keymap.set("n", "<C-w>n", ":tab new<CR>")
+
+
+
+
+--vim.api.nvim_create_autocmd("BufWritePre", {
+--  callback = function()
+--    if vim.bo.filetype == "octo" then
+--      vim.b.disable_autoformat = true
+--      return true
+--    end
+--  end,
+--})
+--vim.api.nvim_create_autocmd('BufWritePre', {
+--  callback = function()
+--    vim.lsp.buf.format({ async = false })
+--  end
+--})

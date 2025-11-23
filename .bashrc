@@ -119,6 +119,7 @@ fi
 
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/workspace/cpp/assimp/bin/
 export PATH=$PATH:$HOME/programs/node/bin
+export PATH=$PATH:$HOME/.local/kitty.app/bin/
 #/home/rik/programs/qtcreator-10.0.1/bin:$HOME/programs/flutter/bin
 #. "$HOME/.cargo/env"
 export PATH="~/.local/bin":$PATH
